@@ -1,14 +1,11 @@
 def fibonacci(n):
     # Write your code here.
-    cache = {0:0, 1:1}
-    if n == 0:
-        return 0
-    if n == 1:
-        return 1
-    if n not in cache:
-        cache[n] = fibonacci(n-1) + fibonacci(n-2)
-    return cache[n]
+    fibs = [0, 1]
+    for i in range(2, 41):
+        fibs.append(fibs[i-1]+fibs[i-2])
+    return fibs[n]
 
 
-print fibonacci(10)
+
+print fibonacci(40)
 # fibonacci(6)
